@@ -1,0 +1,994 @@
+{
+	"info": {
+		"_postman_id": "5be0e7b7-de1e-495b-a93a-152fdb4dff17",
+		"name": "distribuidos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registrar-tutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nick\": \"breiner99\",\r\n    \"password\": \"bc24\",\r\n    \"nombre\": \"breiner\",\r\n    \"apellido\": \"correa\",\r\n    \"telefono\": 997072900,\r\n    \"cursos\": [\r\n        {\r\n            \"_id\": \"607206d4393c312784c34739\",\r\n            \"nombre\": \"trigonometria\",\r\n            \"codigo\": \"123B\",\r\n            \"temario\": [\r\n                \"razon trigonometrica\",\r\n                \"area circular\"\r\n            ],\r\n            \"area\": \"Matematica\",\r\n            \"grado\": \"1\",\r\n            \"presentacion\": \"Curso de trigonometria para la medicina\",\r\n            \"horas\": 2\r\n        }\r\n    ],\r\n    \"rol\": \"Admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/registrar-tutor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"registrar-tutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar-tutor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/buscar-tutor/607b09573f229c205498403c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"buscar-tutor",
+						"607b09573f229c205498403c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar-tutor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cursos\": [\r\n        {\r\n            \"temario\": [\r\n                \"razon trigonometrica\",\r\n                \"area circular\"\r\n            ],\r\n            \"_id\": \"607206d4393c312784c34739\",\r\n            \"nombre\": \"trigonometria\",\r\n            \"codigo\": \"123B\",\r\n            \"area\": \"Matematica\",\r\n            \"grado\": \"1\",\r\n            \"presentacion\": \"Curso de trigonometria para la medicina\",\r\n            \"horas\": 2,\r\n            \"__v\": 0\r\n        }\r\n    ],\r\n    \"nick\": \"franco\",\r\n    \"password\": \"fg24\",\r\n    \"nombre\": \"franco\",\r\n    \"apellido\": \"her\",\r\n    \"telefono\": 543656,\r\n    \"rol\": \"Admin\",\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/actualizar-tutor/60721761f53ea6561cfd28f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"actualizar-tutor",
+						"60721761f53ea6561cfd28f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "elimar-tutor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/eliminar-tutor/60721761f53ea6561cfd28f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"eliminar-tutor",
+						"60721761f53ea6561cfd28f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar-alumnos-del-tutor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3600/escuela/buscar-alumnos-del-tutor/607b09573f229c205498403c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"buscar-alumnos-del-tutor",
+						"607b09573f229c205498403c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar-alumno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"alex\",\r\n    \"apellido\": \"dominguez\",\r\n    \"nacimiento\": \"2017-10-09T05:00:00.000Z\",\r\n    \"telefono\": 787684,\r\n    \"user\": \"607b09573f229c205498403c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/registrar-alumno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"registrar-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "datos-de-un-alumno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idAlumno",
+							"value": "60739620388b0f0754340028",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/datos-alumno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"datos-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar-alumno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"idAlumno\":\"60738b106f7f9f25983d0d74\",\r\n        \"nombre\": \"franco3\",\r\n        \"apellido\": \"flores3\",\r\n        \"nacimiento\": \"2017-10-09T05:00:00.000Z\",\r\n        \"telefono\": 99665656,\r\n        \"user\": \"604d200df15b092498eff574\",\r\n        \"__v\": 0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/actualizar-alumno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"actualizar-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alumnoEliminado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idAlumno",
+							"value": "60739620388b0f0754340028",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/eliminar-alumno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"eliminar-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asistencia-alumno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "asistencia",
+							"value": "604d2f2d45267c24b02d13fb",
+							"type": "text"
+						},
+						{
+							"key": "tardanza",
+							"value": "604d3a0be6f2be0cd4e50ce4",
+							"type": "text"
+						},
+						{
+							"key": "falta",
+							"value": "604d405e6602fc2488930a00",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "99793475",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "604d200df15b092498eff574",
+							"type": "text"
+						},
+						{
+							"key": "my-array",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "my-array",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/asistencia-alumno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"asistencia-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar-examenSemanal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nota\": \"20\",\r\n    \"estado\": \"inactivo\",\r\n    \"alumno\": \"607231e5c014fc68f09811dd\",\r\n    \"user\": \"60721761f53ea6561cfd28f4\",\r\n    \"curso\": \"6072291e06b30b3bb8ca4c06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/registrar-examenSemanal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"registrar-examenSemanal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar-examenBimestral",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nota\": \"20\",\r\n    \"estado\": \"inactivo\",\r\n    \"alumno\": \"607231e5c014fc68f09811dd\",\r\n    \"user\": \"60721761f53ea6561cfd28f4\",\r\n    \"curso\": \"6072291e06b30b3bb8ca4c06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/registrar-examenBimestral",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"registrar-examenBimestral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar-examenMensual",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nota\": \"20\",\r\n    \"estado\": \"inactivo\",\r\n    \"alumno\": \"607231e5c014fc68f09811dd\",\r\n    \"user\": \"60721761f53ea6561cfd28f4\",\r\n    \"curso\": \"6072291e06b30b3bb8ca4c06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/registrar-examenMensual",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"registrar-examenMensual"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver-examenSemanal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cursoId",
+							"value": "60737f4ab470c92458786a52",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/actualizar-observacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"actualizar-observacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver-examenMensual",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/ver-examenMensual/60721761f53ea6561cfd28f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"ver-examenMensual",
+						"60721761f53ea6561cfd28f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver-examenBimestral",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/ver-examenBimestral/60721761f53ea6561cfd28f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"ver-examenBimestral",
+						"60721761f53ea6561cfd28f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar-calender",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lunes",
+							"value": "h",
+							"type": "text"
+						},
+						{
+							"key": "lunes",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "martes",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "martes",
+							"value": "tr",
+							"type": "text"
+						},
+						{
+							"key": "miercoles",
+							"value": "re",
+							"type": "text"
+						},
+						{
+							"key": "miercoles",
+							"value": "f",
+							"type": "text"
+						},
+						{
+							"key": "jueves",
+							"value": "a",
+							"type": "text"
+						},
+						{
+							"key": "jueves",
+							"value": "c",
+							"type": "text"
+						},
+						{
+							"key": "viernes",
+							"value": "h",
+							"type": "text"
+						},
+						{
+							"key": "viernes",
+							"value": "f",
+							"type": "text"
+						},
+						{
+							"key": "sabado",
+							"value": "t",
+							"type": "text"
+						},
+						{
+							"key": "sabado",
+							"value": "b",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "60721761f53ea6561cfd28f4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/guardar-calender",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"guardar-calender"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traer-calender",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "60721761f53ea6561cfd28f4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "60721761f53ea6561cfd28f4",
+							"type": "text"
+						},
+						{
+							"key": "curso",
+							"value": "604d2f2d45267c24b02d13fb",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/traer-calender",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"traer-calender"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar-curso",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idCurso",
+							"value": "60737c39e47e3b39f86dcc8b",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/buscar-curso/607b16743d28332088d1b8af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"buscar-curso",
+						"607b16743d28332088d1b8af"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar-curso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "trigonometria",
+							"type": "text"
+						},
+						{
+							"key": "codigo",
+							"value": "123B",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "Matematica",
+							"type": "text"
+						},
+						{
+							"key": "grado",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "presentacion",
+							"value": "Curso de trigonometria para la medicina",
+							"type": "text"
+						},
+						{
+							"key": "horas",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "temario",
+							"value": "razon trigonometrica",
+							"type": "text"
+						},
+						{
+							"key": "temario",
+							"value": "area circular",
+							"type": "text"
+						},
+						{
+							"key": "horaIni",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "cantidadHoras",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/guardar-curso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"guardar-curso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar-curso",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCurso\":\"60737c39e47e3b39f86dcc8b\",\r\n    \"temario\": [\r\n        \"gaaa\",\r\n        \"giiii\"\r\n    ],\r\n    \"nombre\": \"historia\",\r\n    \"codigo\": \"123B\",\r\n    \"area\": \"lenguaje\",\r\n    \"grado\": \"1\",\r\n    \"presentacion\": \"Curso de trigonometria para la medicina\",\r\n    \"horas\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/actualizar-curso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"actualizar-curso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar-curso",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idCurso",
+							"value": "60737c39e47e3b39f86dcc8b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/eliminar-curso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"eliminar-curso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver-Observacion Alumno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "607b09573f229c205498403c",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "curso",
+							"value": "607206d4393c312784c34739",
+							"type": "text"
+						},
+						{
+							"key": "alumno",
+							"value": "607b09c63f229c205498403e",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/observacion-alumno/607b09573f229c205498403c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"observacion-alumno",
+						"607b09573f229c205498403c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar-observacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"observacionId\":\"60727cb25838161fd09d0538\",\r\n    \"descripcion\": \"No hace su tarea\",\r\n    \"fecha\": \"2021-04-11T22:59:22.557Z\",\r\n    \"alumno\": \"604d2f2d45267c24b02d13fb\",\r\n    \"curso\": \"604d2f2d45267c24b02d13fb\",\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/actualizar-observacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"actualizar-observacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar-observacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "descripcion",
+							"value": "El alumno se porto muy mal",
+							"type": "text"
+						},
+						{
+							"key": "alumno",
+							"value": "607b09573f229c205498403c",
+							"type": "text"
+						},
+						{
+							"key": "curso",
+							"value": "607206d4393c312784c34739",
+							"type": "text"
+						},
+						{
+							"key": "user ",
+							"value": "607b09573f229c205498403c",
+							"type": "text"
+						},
+						{
+							"key": "IdUser",
+							"value": "607b09573f229c205498403c",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/guardar-observacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"guardar-observacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "observacion-alumno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "curso",
+							"value": "604d2f2d45267c24b02d13fb",
+							"type": "text"
+						},
+						{
+							"key": "alumno",
+							"value": "604d2f2d45267c24b02d13fb",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/observacion-alumno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"observacion-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar-observacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"observacionId\":\"60727cb25838161fd09d0538\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3600/escuela/eliminar-observacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3600",
+					"path": [
+						"escuela",
+						"eliminar-observacion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
