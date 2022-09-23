@@ -12,31 +12,61 @@ function saveUser(req, res) {
 
 function unbind(req, res) {
     var params = req.params;
-    let thirdPartyProviderId = req.params.thirdPartyProviderId;
-    console.log(thirdPartyProviderId);
 
-    console.log(thirdPartyProviderId.includes(" "));
+    let thirdPartyProviderId = req.params.thirdPartyProviderId;
+
+    let tsec = req.headers.tsec;
+
+    let bodyThirdPartyUserId = req.body.thirdPartyUserId;
 
     Error.ErrorSchema.errorParameters.name = "errorcito";
 
-    if (thirdPartyProviderId.includes(" ")) {
+    if (tsec == null || tsec == "") {
         return res.status(400).json({
-            ok: false,
-            error: Error,
-            message: "No se pudo actualizar al usuario",
+            code: "unauthorized",
+            message: "unauthorized",
+            parameters: [],
+            type: "FATAL"
         });
     }
 
+    if (thirdPartyProviderId == null) {
+        return res.status(400).json({
+            code: "functionalError",
+            message: "",
+            parameters: [],
+            type: "FATAL"
+        });
+    }
+
+    if (thirdPartyProviderId.includes(" ")) {
+        return res.status(400).json({
+            code: "functionalError",
+            message: "00000001#PARAMETROS OBLIGATORIOS",
+            parameters: [],
+            type: "FATAL"
+        });
+    }
+
+    if (bodyThirdPartyUserId == null) {
+        return res.status(400).json({
+            code: "El valor obligatorio no se ha informado: thirdPartyUserId no puede ser null",
+            message: "00000001#PARAMETROS OBLIGATORIOS",
+            parameters: [{name: "thirdPartyUserId no puede ser null"}],
+            type: "FATAL"
+        });
+    }
+
+    console.log(bodyThirdPartyUserId);
+
     User.UserSchema.apellido = "correa";
 
-    res.json({
-        ok: true,
-        user: User,
-        message: "Creacion GAA Exitosa",
+    res.status(204).json({
+        
     });
 }
 
 
 module.exports = {
-    saveUser,unbind
+    saveUser, unbind
 };

@@ -6,7 +6,8 @@ var ErrorSchema = {
     code: String,
     message: String,
     nombre: String,
-    errorParameters: ErrorParameters,
+    /* errorParameters: ErrorParameters, */
+    errorParameters: [ErrorParameters],
     type: String
 };
 
