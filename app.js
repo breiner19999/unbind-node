@@ -5,13 +5,7 @@ var app = express();
 const cors = require('cors');
 
 // Carga de rutas
-var user_routes = require('./routes/user');
-var alumno_routes = require('./routes/alumno');
-var asistencia_routes = require('./routes/asistencia');
-var curso_routes = require('./routes/curso');
-var observacion_routes = require('./routes/observacion');
-var examen_routes = require('./routes/examen');
-var horario_routes = require('./routes/horario');
+var user_routes = require('./src/routes/user');
 
 // Parseo del json
 app.use(express.urlencoded({ extended: false }));
@@ -30,12 +24,8 @@ app.use((req, res, next) => {
 });
 
 // Rutas
-app.use('/escuela', user_routes);
-app.use('/escuela', alumno_routes);
-app.use('/escuela', asistencia_routes);
-app.use('/escuela', curso_routes);
-app.use('/escuela', observacion_routes);
-app.use('/escuela', examen_routes);
-app.use('/escuela', horario_routes);
+app.use('/payments/v0/third-parties-providers', user_routes);
+
+
 
 module.exports = app;
